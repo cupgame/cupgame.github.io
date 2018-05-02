@@ -1,0 +1,10 @@
+#container{
+height: 1200px;
+width: 90%;
+margin-right: auto;
+margin-left: auto;
+background-color: red;
+border-radius: 100px;
+min-width:1000px;
+}
+

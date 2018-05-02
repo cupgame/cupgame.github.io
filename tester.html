@@ -1,0 +1,36 @@
+<head>
+
+</head>
+
+<body>
+			<script>
+		// set up algarithm to randomly place ball under a cup. if one of the cups is clicked than it will check if the ball is under the cup. if it is than it will add a point to the score board. if it isnt than it will tell you that you got it wrong.  
+		
+		function pickBallCup(){
+	var roll = 0;
+	var randomBall = "";
+	roll = Math.floor(Math.random() * 3) + 1;
+	switch(roll){
+		case 1:
+			randomBall = "cup1";
+			break;
+		case 2:
+			randomBall = "cup2";
+			break;
+		case 3:
+			randomBall = "cup3";
+			break;
+			}
+		alert(randomBall);
+		}
+		
+
+
+
+
+
+
+
+		</script>
+
+</body>
