@@ -1,0 +1,71 @@
+<head>
+    <title>cup game</title>
+    <link rel="stylesheet" type="text/css" href="finalProjectStyle.css">
+    <script>
+        // set up algarithm to randomly place ball under a cup. if one of the cups is clicked than it will check if the ball is under the cup. if it is than it will add a point to the score board. if it isnt than it will tell you that you got it wrong.ss
+        var guessBall, score, guess;
+
+        function pickBallCup(guess) {
+            var score;
+            var roll;
+            var randomBall = "";
+            //var guessBall =$('#cup1').on('click', );
+            roll = Math.floor(Math.random() * 3) + 1;
+            console.log(roll + "My Roll!");
+            switch (roll) {
+                case 0:
+                    randomBall = "cup1";
+                    console.log("randomBall= " + randomBall);
+                    break;
+                case 1:
+                    randomBall = "cup2";
+                    break;
+                case 2:
+                    randomBall = "cup3";
+                    break;
+            }
+
+            //out of switch //
+            console.log(guess);
+            console.log("Does " + guess + " = " + randomBall + "? Hope so.");
+
+            if (guess === randomBall) {
+                alert("yay you get one point!!!");
+            } else {
+                alert("you are wrong!!!!!!!!!!!");
+            }
+        }
+
+        function Label1() {
+            var guessBall = "cup1";
+            console.log("Hi!" + guessBall);
+            pickBallCup(guessBall);
+        }
+
+        function Label2() {
+            guessBall = "cup2";
+            console.log("Hi!" + guessBall);
+            pickBallCup(guessBall);
+        }
+
+        function Label3() {
+            guessBall = "cup3";
+            console.log("Hi!" + guessBall);
+            pickBallCup(guessBall);
+        }
+
+    </script>
+</head>
+
+
+
+<body>
+    <div id="container">
+
+        <img id="cup1" onclick="Label1()" src="http://www.clker.com/cliparts/8/m/s/0/t/K/blue-cup-hi.png">
+        <img id="cup2" onclick="Label2()" src="http://www.clker.com/cliparts/8/m/s/0/t/K/blue-cup-hi.png">
+        <img id="cup3" onclick="Label3()" src="http://www.clker.com/cliparts/8/m/s/0/t/K/blue-cup-hi.png">
+    </div>
+</body>
+
+
