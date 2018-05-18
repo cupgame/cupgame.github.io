@@ -1,14 +1,44 @@
+div {
+float: left;
+
+}
+
+img {
+	width: 80%;
+	margin-left: 10%;
+}
+
+#cupholder {
+width: 80%;
+margin-left: 5%;
+background-color: red;
+padding: 5%;
+}
+
+.cup {
+background-color: silver;
+padding: 3%;
+}
+
+
 #container{
 height: 1200px;
 width: 90%;
-margin-right: auto;
-margin-left: auto;
+margin-left: 5%;
 background-color: red;
 border-radius: 100px;
-min-width:1000px;
+min-width:200px;
 }
+
 #scoreboard{
 height: 100px;
-width:100px;
 background-color: blue;
+width: 30%;
+}
+
+#points{
+width: 80%;
+margin-left: 10%;
+background-color: white;
+color: black;
 }

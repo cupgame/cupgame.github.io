@@ -1,90 +1,97 @@
 <head>
     <!-- why do we name files index.html    history and tradition, servers expect index, keeps URL shorter -->
-    <title>cup game v5.10.857am </title>
-    <link rel="stylesheet" type="text/css" href="finalProjectStyle.css">
-    <script>
-        // set up algarithm to randomly place ball under a cup. if one of the cups is clicked than it will check if the ball is under the cup. if it is than it will add a point to the score board. if it isnt than it will tell you that you got it wrong.ss
-        var guessBall, score, guess;
-        var score = 0;
+<title>cup game v5.18.929am </title>
+<link rel="stylesheet" type="text/css" href="finalprojectstyle.css">
 
-        function pickBallCup(guess) {
-            
-            var roll;
-            var randomBall = "";
-            //var guessBall =$('#cup1').on('click', );
-            roll = Math.floor(Math.random() * 3) + 1;
-            console.log(roll + "My Roll!");
-            switch (roll) {
-                case 0:
-                    randomBall = "cup1";
-                    console.log("randomBall= " + randomBall);
-                    break;
-                case 1:
-                    randomBall = "cup2";
-                    break;
-                case 2:
-                    randomBall = "cup3";
-                    break;
-            }
+<script type="text/javascript">
+    document.getElementById('scorestuff').innerHtml = score;
 
-            //out of switch //
+    // set up algarithm to randomly place ball under a cup. if one of the cups is clicked than it will check if the ball is under the cup. if it is than it will add a point to the score board. if it isnt than it will tell you that you got it wrong.ss
+    var guessBall, score, guess;
+    var score = 0;
+
+    function pickBallCup(guess) {
+        
+        var roll;
+        var randomBall = "";
+        //var guessBall =$('#cup1').on('click', );
+        roll = Math.floor(Math.random() * 3) + 1;
+        console.log(roll + "My Roll!");
+        console.log("randomBall= " + randomBall);
+
+        switch (roll) {
+            case 0:
+                randomBall = "cup1";
+                break;
+            case 1:
+                randomBall = "cup2";
+                break;
+            case 2:
+                randomBall = "cup3";
+                break;
+        }
+        //end of switch //
+
+
+        console.log(guess);
+        console.log("Does " + guess + " = " + randomBall + "? Hope so.");
+
+        if (guess === randomBall) {
+            alert("yay you get one point!!!");
+
+
+            score++;
             console.log(guess);
-            console.log("Does " + guess + " = " + randomBall + "? Hope so.");
-
-            if (guess === randomBall) {
-                alert("yay you get one point!!!");
-                score++;
-                console.log(guess);
-                console.log(score);
-            } else {
-                alert("you are wrong!!!!!!!!!!!");
-            }
+            console.log(score);
+        } else {
+            alert("you are wrong!!!!!!!!!!!");
         }
+    }
 
-        function Label1() {
-            var guessBall = "cup1";
-            console.log("Hi!" + guessBall);
-            pickBallCup(guessBall);
-        }
+    function Label1() {
+        var guessBall = "cup1";
+        console.log("Hi!" + guessBall);
+        pickBallCup(guessBall);
+    }
 
-        function Label2() {
-            guessBall = "cup2";
-            console.log("Hi!" + guessBall);
-            pickBallCup(guessBall);
-        }
+    function Label2() {
+        guessBall = "cup2";
+        console.log("Hi!" + guessBall);
+        pickBallCup(guessBall);
+    }
 
-        function Label3() {
-            guessBall = "cup3";
-            console.log("Hi!" + guessBall);
-            pickBallCup(guessBall);
-        }
+    function Label3() {
+        guessBall = "cup3";
+        console.log("Hi!" + guessBall);
+        pickBallCup(guessBall);
+    }
 
-    </script>
+</script>
 </head>
 
 
 
 <body>
-    <script type="text/javascript">
-        document.getElementById('scorestuff').innerHtml = score;
+    
+<div id="container">
 
-    </script>
-    <div id="container">
-        <div id="scoreboard">
-            <p id="scorestuff">
-
-            </p>
-
-           
-           
-                </div>
-
-
-        <img id="cup1" onclick="Label1()" src="http://www.clker.com/cliparts/8/m/s/0/t/K/blue-cup-hi.png">
-        <img id="cup2" onclick="Label2()" src="http://www.clker.com/cliparts/8/m/s/0/t/K/blue-cup-hi.png">
-        <img id="cup3" onclick="Label3()" src="http://www.clker.com/cliparts/8/m/s/0/t/K/blue-cup-hi.png">
-      
+    <div id="scoreboard">
+        <div id="points">
+            Zero.
+        </div>
     </div>
+    <!-- close of scoreboard  -->
+
+
+    <div id="cupholder">
+        <img id="cup1" class="cup" onclick="Label1()" src="cup.png">
+        <img id="cup2" class="cup" onclick="Label2()" src="cup.png">
+        <img id="cup3" class="cup" onclick="Label3()" src="cup.png">
+    </div>
+    <!-- close of cup holder -->
+
+</div>
+
 </body>
 
 
