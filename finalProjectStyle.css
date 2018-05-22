@@ -1,18 +1,19 @@
 div {
 float: left;
-
 }
 
 img {
-	width: 80%;
+	width: 10%;
 	margin-left: 10%;
 }
 
 #cupholder {
 width: 80%;
 margin-left: 5%;
-background-color: red;
-padding: 5%;
+/*background-color: black;*/
+margin-top: 100px;
+padding-left: 5%;
+
 }
 
 .cup {
@@ -42,3 +43,11 @@ margin-left: 10%;
 background-color: white;
 color: black;
 }
+
+
+#textinfo{
+background-color: grey;
+margin-right: 10%;
+}
+
+/*create a new style for your feedback*/

@@ -4,83 +4,104 @@
 <link rel="stylesheet" type="text/css" href="finalprojectstyle.css">
 
 <script type="text/javascript">
-    document.getElementById('scorestuff').innerHtml = score;
+// set up algarithm to randomly place ball under a cup. if one of the cups is clicked than it will check if the ball is under the cup. if it is than it will add a point to the score board. if it isnt than it will tell you that you got it wrong.
 
-    // set up algarithm to randomly place ball under a cup. if one of the cups is clicked than it will check if the ball is under the cup. if it is than it will add a point to the score board. if it isnt than it will tell you that you got it wrong.ss
-    var guessBall, score, guess;
-    var score = 0;
+// initialize all variables and set a starting value..
+var guessBall ="";
+var points = 0;
+var guess = "";
 
-    function pickBallCup(guess) {
-        
-        var roll;
-        var randomBall = "";
-        //var guessBall =$('#cup1').on('click', );
-        roll = Math.floor(Math.random() * 3) + 1;
-        console.log(roll + "My Roll!");
-        console.log("randomBall= " + randomBall);
 
-        switch (roll) {
-            case 0:
-                randomBall = "cup1";
-                break;
-            case 1:
-                randomBall = "cup2";
-                break;
-            case 2:
-                randomBall = "cup3";
-                break;
-        }
-        //end of switch //
+// this replaces alert,  it will print to the target element
+// first parameter is the id of your target
+// second parameter is the new message
 
+
+function printStatus(targetElement,newMessage) {
+    var tempId = document.getElementById(targetElement);
+    tempId.innerHTML = newMessage;
+    // fetch the id of the paragraph then assign new text inside (inner)
+}
+
+
+function startGame(){
+var newMessage = "points= " + points;    
+printStatus("pointsdiv",newMessage);
+// alert("hi");
+console.log("game has started");
+}
+
+
+function pickBallCup(guess) {
+   
+    var roll;
+    var randomBall = "";
+    //var guessBall =$('#cup1').on('click', );
+    roll = Math.floor(Math.random() * 3) + 1;
+    console.log(roll + "My Roll!");
+    console.log("randomBall= " + randomBall);
+
+    switch (roll) {
+        case 1:
+            randomBall = "cup1";
+            break;
+        case 2:
+            randomBall = "cup2";
+            break;
+        case 3:
+            randomBall = "cup3";
+            break;
+    }
+    //end of switch //
+
+
+    console.log(guess);
+    console.log("Does " + guess + " = " + randomBall + "? Hope so.");
+
+    if (guess == randomBall) {
+        points++;
+        printStatus("textfeedbackdiv", "yay you get one point!!!");
+        printStatus("pointsdiv","points = " + points + "!");
 
         console.log(guess);
-        console.log("Does " + guess + " = " + randomBall + "? Hope so.");
+        console.log(points);
+    } else {
+        // alert("you are wrong!!!!!!!!!!!");
+        printStatus("textfeedbackdiv","you are wrong silly");
+    } // end if else
+}  // end function
 
-        if (guess === randomBall) {
-            alert("yay you get one point!!!");
 
+function Label1() {
+    var guessBall = "cup1";
+    console.log("Hi!" + guessBall);
+    pickBallCup(guessBall);
+}
 
-            score++;
-            console.log(guess);
-            console.log(score);
-        } else {
-            alert("you are wrong!!!!!!!!!!!");
-        }
-    }
+function Label2() {
+    guessBall = "cup2";
+    console.log("Hi!" + guessBall);
+    pickBallCup(guessBall);
+}
 
-    function Label1() {
-        var guessBall = "cup1";
-        console.log("Hi!" + guessBall);
-        pickBallCup(guessBall);
-    }
-
-    function Label2() {
-        guessBall = "cup2";
-        console.log("Hi!" + guessBall);
-        pickBallCup(guessBall);
-    }
-
-    function Label3() {
-        guessBall = "cup3";
-        console.log("Hi!" + guessBall);
-        pickBallCup(guessBall);
-    }
+function Label3() {
+    guessBall = "cup3";
+    console.log("Hi!" + guessBall);
+    pickBallCup(guessBall);
+}
 
 </script>
 </head>
 
 
 
-<body>
+<body onload=startGame()> 
+
+
+
     
 <div id="container">
 
-    <div id="scoreboard">
-        <div id="points">
-            Zero.
-        </div>
-    </div>
-    <!-- close of scoreboard  -->
 
 
     <div id="cupholder">
@@ -88,7 +109,34 @@
         <img id="cup2" class="cup" onclick="Label2()" src="cup.png">
         <img id="cup3" class="cup" onclick="Label3()" src="cup.png">
     </div>
+    <div id="textinfo">
+        whitch cup has the ball inside?
+    </div>
     <!-- close of cup holder -->
+
+<p></p>
+
+
+
+<p></p>
+
+<div id="resultsdiv">
+
+    <div id="textfeedbackdiv">
+        feedback here...
+    </div>
+
+    <p></p>
+
+    <div id="pointsdiv">
+        Points
+    </div>
+</div>
+<!-- close of scoreboard  -->
+
+
+
+
 
 </div>
 
